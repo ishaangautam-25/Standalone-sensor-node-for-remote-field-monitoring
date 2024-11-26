@@ -1,81 +1,99 @@
-This repository contains the implementation of a stand-alone sensor node designed for monitoring environmental parameters in rural and agricultural settings. The sensor node leverages renewable solar energy and transmits real-time data to a remote server via GPRS.
+# Stand-Alone Sensor Node for Remote Field Monitoring  
 
-Overview:
-This project is developed under NABARD's initiative to enhance agricultural productivity and rural development by employing IoT-based solutions. The sensor node is powered by a solar panel and integrates advanced sensors to monitor parameters like soil moisture, environmental temperature and humidity, and water temperature in reservoirs. Data is transmitted to the cloud (ThingSpeak) for real-time analysis using the TTGO T-Call ESP32 SIM800L board.
+This project, developed under **HIMCOSTE** and **NABARD**, focuses on a solar-powered stand-alone sensor node designed for monitoring environmental parameters in remote areas. The system integrates sensors for soil moisture, environmental temperature and humidity, and water temperature, with data transmission handled via GPRS using a TTGO T-Call ESP32 SIM800L module.
 
-Features:
-Renewable Energy Powered: Operates on solar power with a 12V lead-acid battery for energy storage.
-Remote Monitoring: Uses a BSNL 4G SIM card for data transmission via GPRS, eliminating the dependency on Wi-Fi.
-Real-Time Data Logging: Sends sensor readings to ThingSpeak for analysis and visualization.
-Compact and Integrated Design: Combines NodeMCU and SIM800L module functionalities in the TTGO T-Call ESP32 board.
-Upgradable: Designed to integrate weather prediction APIs and advanced algorithms for irrigation planning.
+---
 
-Components Used:
+## Table of Contents  
 
-1	Node MCU	TTGO T-Call ESP32 SIM800L	
-2	Soil moisture sensor	V1.2	
-3	Temperature and humidity sensor SHT20	
-4	Water temperature sensor	DS18B20	
-5	Solar panel (3W)	
-6	Solar charge controller	SY2024H	
-7	Battery	Lead-acid (12V)	
-8	LEDs	
+1. [Introduction](#introduction)  
+2. [Features](#features)  
+3. [Components](#components)  
+4. [Working Principle](#working-principle)  
+5. [Sensor Integration and Implementation](#sensor-integration-and-implementation)  
+6. [System Overview](#system-overview)  
+7. [License](#license)  
 
+---
 
-How It Works?
+## Introduction  
 
-Data Collection:
+The **National Bank for Agriculture and Rural Development (NABARD)** is an apex institution that promotes sustainable and inclusive development in rural India. This project aligns with NABARD's goals by creating a renewable energy-powered sensor node for real-time environmental monitoring and data analysis.  
 
-Soil Moisture Sensor (V1.2): Measures soil moisture levels using capacitive sensing.
-SHT20 Sensor: Monitors environmental temperature and humidity with high precision.
-DS18B20 Sensor: Measures water temperature in reservoirs.
+---
 
-Data Transmission:
+## Features  
 
-Sensor readings are gathered by the TTGO T-Call ESP32 board and transmitted to the ThingSpeak server using a SIM800L GPRS connection.
+- Solar-powered stand-alone device with 12V lead-acid battery.  
+- Real-time monitoring of soil moisture, environmental temperature, humidity, and water temperature.  
+- GPRS-enabled data transmission using BSNL 4G network.  
+- Remote data access via ThingSpeak for visualization and analysis.  
+- Energy-efficient and eco-friendly operation.  
+- LED indicators for system status.  
 
-Energy Management:
+---
 
-The solar panel charges a 12V lead-acid battery through the SY2024H solar charge controller.
+## Components  
 
-LEDs indicate system status:
-Red: Power ON.
-Yellow: Data acquisition in progress.
-Green: Data logging to ThingSpeak.
+| S.No. | Component                       | Model                     | Quantity |  
+|-------|----------------------------------|---------------------------|----------|  
+| 1     | Microcontroller                  | TTGO T-Call ESP32 SIM800L | 1        |  
+| 2     | Soil Moisture Sensor             | V1.2                      | 1        |  
+| 3     | Temperature & Humidity Sensor    | SHT20                     | 1        |  
+| 4     | Water Temperature Sensor         | DS18B20                   | 1        |  
+| 5     | Solar Panel                      | 3-Watt                    | 1        |  
+| 6     | Solar Charge Controller          | SY2024H                   | 1        |  
+| 7     | Battery                          | Lead-acid (12V)           | 1        |  
+| 8     | LEDs                             | -                         | 3        |  
 
-Real-Time Monitoring:
+---
 
-The collected data is visualized on ThingSpeak, enabling remote monitoring and analysis of environmental conditions.
-Advanced Features
-Weather Prediction Integration (Future Scope):
-By incorporating weather APIs, users can plan irrigation and farming activities based on soil conditions and forecasted weather.
-Energy Conservation:
-Solar power usage reduces dependency on external power sources, ensuring sustainable operation.
+## Working Principle  
 
-Installation and Usage:
+This sensor node monitors various environmental parameters and uploads the data to ThingSpeak for remote analysis:  
 
-Hardware Setup:
+1. **Power Supply**: The system uses a solar panel to charge a 12V lead-acid battery, ensuring a sustainable power source.  
+2. **Sensor Monitoring**:  
+   - Soil moisture levels are monitored using a capacitive soil moisture sensor.  
+   - Temperature and humidity are measured using the SHT20 sensor.  
+   - Water temperature is tracked using the DS18B20 sensor.  
+3. **Data Transmission**: The TTGO T-Call ESP32 SIM800L module uploads real-time data to ThingSpeak using a GPRS-enabled SIM card (BSNL 4G).  
+4. **System Indication**: LEDs provide visual feedback for system power, data acquisition, and data logging statuses.  
 
-Connect all sensors (Soil Moisture, SHT20, DS18B20) to the TTGO T-Call ESP32 board.
-Wire the solar panel to the SY2024H solar charge controller and connect it to the 12V battery.
+---
 
-Software Configuration:
+## Sensor Integration and Implementation  
 
-Install necessary libraries for ESP32 and ThingSpeak integration.
-Configure the GPRS module with a BSNL 4G SIM card.
-Update the code with your ThingSpeak API key and other necessary parameters.
+### 1. Soil Moisture Sensor (V1.2):  
+- Measures soil moisture using capacitive sensing.  
+- **Voltage Range**: 3.3V to 5.5V.  
+- Outputs analog signals corresponding to soil moisture levels.  
 
-Upload Code:
+### 2. Temperature and Humidity Sensor (SHT20):  
+- Measures temperature and humidity using capacitive and band-gap sensors.  
+- **Interface**: I2C.  
+- **Working Voltage**: 2.1V to 3.6V.  
 
-Use Arduino IDE to upload the code to the TTGO T-Call ESP32 board.
+### 3. Dallas Water Temperature Sensor (DS18B20):  
+- Measures water temperature in reservoirs.  
+- **Interface**: 1-Wire.  
+- **Voltage Range**: 3V to 5.5V.  
+- **Accuracy**: ±0.5°C.  
 
-Monitor Data:
+### 4. Solar Charge Controller (SY2024H):  
+- Ensures safe charging of the 12V lead-acid battery.  
+- Features built-in protections (short circuit, overload, reverse polarity).  
 
-Access ThingSpeak to view real-time sensor readings and historical data trends.
-Future Enhancements
-Integration of weather prediction algorithms for smart irrigation planning.
-Addition of more environmental sensors for comprehensive monitoring.
-Optimization of power consumption for extended operation.
+---
 
-Contributing
-Contributions are welcome! Feel free to submit issues, pull requests, or suggestions to enhance this project.
+## System Overview  
+
+### **Energy Conservation**  
+The sensor node utilizes a solar panel for charging, ensuring reduced dependence on external power sources.  
+
+### **Remote Access and Monitoring**  
+Data is uploaded to ThingSpeak, enabling real-time analysis and trend tracking. Users can remotely access and analyze data for informed decision-making.  
+
+### **Future Scope**  
+Integration with weather prediction APIs can enable advanced irrigation management by comparing real-time data with weather forecasts to optimize resource usage.  
+
