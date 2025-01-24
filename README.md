@@ -12,7 +12,6 @@ This project, developed under **HIMCOSTE** and **NABARD**, focuses on a solar-po
 4. [Working Principle](#working-principle)  
 5. [Sensor Integration and Implementation](#sensor-integration-and-implementation)  
 6. [System Overview](#system-overview)  
-7. [License](#license)  
 
 ---
 
