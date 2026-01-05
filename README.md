@@ -372,16 +372,17 @@ Load (-)         →  ESP32 GND
    - Monitor solar charging functionality
 
 #### Circuit Schematic
-![Circuit Diagram](nabard_schematic.png)
+![Circuit Diagram](Schematic.png)
 
 #### Breadboard Implementation 
-![Breadboard Implementation](nabard_breadboard.jpg)
+![Breadboard Implementation](Breadboard_remote_field.jpg)
 
-#### Finalized Circuit
-![Final PCB](nabard_pcb.jpg)
+#### Final circuit
+![perfboard](perfboard_assembly.jpg)
+![Final PCB](Final_arrangement.jpg)
 
-#### Complete Setup
-![Complete Sensor Node](nabard_complete_setup.jpg)
+#### Deployed sensor node
+![Complete Sensor Node](.jpg)
 
 ---
 
