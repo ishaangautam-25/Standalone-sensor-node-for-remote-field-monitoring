@@ -259,7 +259,7 @@ graph TD
 - LEDs × 3 (Red, Yellow, Yellow)
 - 4.7kΩ Resistors (for DS18B20)
 - 220Ω Resistors (for LEDs) × 3
-- SIM Card with active data plan (BSNL 4G recommended)
+- SIM Card with active data plan (BSNL 4G used)
 - Weather-resistant enclosure
 - Connecting wires
 - PCB/Perfboard
@@ -357,7 +357,7 @@ Load (-)         →  ESP32 GND
 
 7. **Field Deployment**
    - Position enclosure in monitoring location
-   - Insert soil moisture sensor at desired depth (5-10cm recommended)
+   - Insert soil moisture sensor in the soil till the mark on the sensor
    - Place DS18B20 in water reservoir or irrigation line
    - Mount SHT20 in shaded, ventilated area
    - Orient solar panel for maximum sun exposure
@@ -379,10 +379,10 @@ Load (-)         →  ESP32 GND
 
 #### Final circuit
 ![perfboard](perfboard_assembly.jpg)
-![Final PCB](Final_arrangement.jpg)
+![Final](Final_arrangement.png)
 
 #### Deployed sensor node
-![Complete Sensor Node](.jpg)
+![Complete Sensor Node](deployed_version.png)
 
 ---
 
@@ -548,7 +548,7 @@ The system supports major Indian cellular providers:
 - **BSNL**: APN - "bsnlnet"
 - **Airtel**: APN - "airtelgprs.com"
 - **Jio**: APN - "jionet"
-- **Vodafone**: APN - "www" or "portalnmms"
+
 
 ### Configuration Example
 ```cpp
@@ -623,12 +623,12 @@ void sendData(float moisture, float temp, float humidity, float waterTemp) {
 All sensor data is uploaded to ThingSpeak cloud platform for real-time visualization and analysis.
 
 **ThingSpeak Channel Fields:**
-- **Field 1**: Soil Moisture (Voltage/Percentage)
-- **Field 2**: Air Temperature (°C)
-- **Field 3**: Air Humidity (%RH)
+- **Field 1**: Air Temperature (°C)
+- **Field 2**: Air Humidity (%RH)
+- **Field 3**: Soil Moisture (Voltage/Percentage)
 - **Field 4**: Water Temperature (°C)
 
-![ThingSpeak Data Visualization](thingspeak_nabard.png)
+![ThingSpeak Data Visualization](Sample_observations_remote.png)
 
 ### Data Update Frequency
 
@@ -694,23 +694,3 @@ All sensor data is uploaded to ThingSpeak cloud platform for real-time visualiza
    - Lower energy costs through efficient irrigation
    - Minimize crop losses due to water stress
    - Improve crop yields and quality
-
-### Future Enhancements
-
-**Advanced Integration (Upcoming Prototypes):**
-- Weather prediction API integration
-- Automated irrigation control based on soil moisture thresholds
-- SMS alerts for critical conditions
-- Machine learning for predictive irrigation scheduling
-- Multi-sensor node networking
-- Solar panel tracking for improved energy harvesting
-
----
-
-## 🔋 Power Management
-
-### Solar Power System
-
-The system is designed for autonomous operation using solar energy with battery backup.
-
-**Power Flow:**
