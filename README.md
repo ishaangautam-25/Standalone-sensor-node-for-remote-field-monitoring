@@ -21,8 +21,7 @@ A solar-powered IoT-based environmental monitoring system for remote agricultura
 - [Communication Protocol](#communication-protocol)
 - [Data Visualization](#data-visualization)
 - [Applications](#applications)
-- [Working Principle](#working-principle)
-- [Power Management](#power-management)
+
 
 ---
 
