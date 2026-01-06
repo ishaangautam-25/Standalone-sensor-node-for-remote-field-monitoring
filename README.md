@@ -1,4 +1,4 @@
-# 🌱 Stand-Alone Sensor Node for Remote Field Monitoring (NABARD)
+# 🌱 Stand-Alone Sensor Node for Remote Field Monitoring [National Bank for Agriculture and Rural Development (NABARD)]
 
 A solar-powered IoT-based environmental monitoring system for remote agricultural fields using ESP32 with integrated GSM/GPRS connectivity. This system enables autonomous, real-time monitoring of soil moisture, temperature, humidity, and water conditions in areas beyond Wi-Fi coverage.
 
